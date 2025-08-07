@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/jersey-m54');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+        -webkit-user-drag: none;
+    user-select: none;
+}
+body{
+     position: relative;
+     overflow-x: hidden;
+     min-height: 100vh; 
+    font-family: "Aref Ruqaa", serif;
+    background: radial-gradient(circle, rgba(28, 29, 39, 1) 50%, rgba(15, 16, 22, 1) 100%);
+}
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -5;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  pointer-events: none;
+  background: transparent;
+}
+
+
+/* ✅ Grid pattern overlay */
+.bg-grid {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#0db72622 1px, transparent 1px), 
+                    linear-gradient(90deg, #0db72622 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: -1; /* مهم جداً علشان ميتغطاش على المحتوى */
+  pointer-events: none;
+}
+
+/* ✅ Light scan moving */
+.bg-scan {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, #86881b 0%, transparent 60%);
+  animation: scanMove 10s linear infinite;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* ✅ Codes layer (data noise) */
+.bg-codes {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  opacity: 0.05;
+  z-index: -3;
+  pointer-events: none;
+}
+
+        /* scrollbar style*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1C1D27;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fbff35;
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8d8f1a;
+}
+
+
+.main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.header{
+    margin-top: 38px;
+}
+.logo{
+    width: 250px;
+    filter: drop-shadow(1px 6px 3px #000);
+}
+.games-sec{
+    width: 80%;
+    direction: rtl;
+}
+.games-sec h1{
+  font-size: 50px;
+    color: #fff;
+    text-shadow: 0 0 5px #fbff35, 0 0 10px #fbff35;
+    filter: drop-shadow(0px 3px 3px #000);
+
+
+}
+.games-cards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 25px 0px;
+}
+.game-card-img {
+    width: 330px;
+    border: solid #fbff35 2px;
+    filter: drop-shadow(0px 4px 6px #000);
+    animation:
+  float 4s ease-in-out infinite;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    clip-path: polygon(
+      10% 0%, 90% 0%, 
+      100% 10%, 100% 90%, 
+      90% 100%, 10% 100%, 
+      0% 90%, 0% 10%
+    );
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
