@@ -33,8 +33,9 @@ body{
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(#0db72622 1px, transparent 1px), 
-                    linear-gradient(90deg, #0db72622 1px, transparent 1px);
+  opacity: 0.2;
+  background-image: linear-gradient(#f4f8018a 1px, transparent 1px), 
+                    linear-gradient(90deg, #c8ff008e 1px, transparent 1px);
   background-size: 60px 60px;
   z-index: -1; /* مهم جداً علشان ميتغطاش على المحتوى */
   pointer-events: none;
@@ -47,10 +48,12 @@ body{
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, #86881b 0%, transparent 60%);
+  background: radial-gradient(circle at center, #00b4a5 0%, transparent 60%);
   animation: scanMove 10s linear infinite;
   z-index: -2;
+  opacity: 0.5;
   pointer-events: none;
+
 }
 
 /* ✅ Codes layer (data noise) */
@@ -133,11 +136,14 @@ body{
       100% 10%, 100% 90%, 
       90% 100%, 10% 100%, 
       0% 90%, 0% 10%
-    );
+    ); 
 }
 
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
+}
+.game-header-logo{
+  width: 60px;
 }
